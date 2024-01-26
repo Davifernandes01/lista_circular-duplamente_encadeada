@@ -140,3 +140,66 @@ void print_list(const Circ_list *list ){
 
     printf("\nsize > %lu\n", list->size);
 }
+
+
+void print_list_v2(const Circ_list *list){
+    if(list_is_empty(list)){
+        printf("list.begin > null\n");
+        printf("list.end > null\n");
+    }else{
+        Circ_node *node = list->begin;
+
+        for(int i = 0; i < list->size; i++){
+           printf("%d <-> ", node->val);
+           node = node->next;
+        
+        }
+        printf("\nlist.end -> %d\n", list->end->val);
+        printf("\nsize > %lu\n", list->size);
+    }
+
+}
+
+
+
+void print_list_inverted(const Circ_list *list ){
+
+    if(list_is_empty(list)){
+        printf("list.begin > null\n");
+        printf("list.end > null\n");
+    }else{
+
+
+        Circ_node *node = list->end;
+
+        do
+        {
+           printf("%d <-> ", node->val);
+           node = node->prev;
+           
+        } while (node != list->end);
+        printf("\nlist.end -> %d\n", list->end->val);
+        
+    }
+
+    printf("\nsize > %lu\n", list->size);
+}
+
+
+void print_list_v2_inverted(const Circ_list *list){
+    if(list_is_empty(list)){
+        printf("list.begin > null\n");
+        printf("list.end > null\n");
+    }else{
+        Circ_node *node = list->end;
+
+        for(int i = 0; i < list->size; i++){
+           printf("%d <-> ", node->val);
+           node = node->prev;
+        
+        }
+        printf("\nlist.end -> %d\n", list->end->val);
+        printf("\nsize > %lu\n", list->size);
+    }
+
+}

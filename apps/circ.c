@@ -13,7 +13,7 @@ int main(){
     circ_list_add_first(list, 10);
 
 
-    print_list(list);
+    print_list_v2(list);
 
 
     return 0;
