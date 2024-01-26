@@ -118,6 +118,29 @@ void circ_list_add_first(Circ_list *list, int val){
 }
 
 
+void circ_list_add_last(Circ_list *list, int val){
+
+    Circ_node *node = create_node(val);
+
+    if(list_is_empty(list)){
+
+        list->begin = node;
+        list->end = node;
+
+    }else{
+
+        list->end->next = node; //atualizando o ponteiro next do nó final(por enquanto)
+        node->prev = list->end; // //ponteiro anterior do node, aponta para o no final da lista
+        list->end = node; // novo no final
+        list->end->next = list->begin; //proximo node do proximo elemento, é o começo da lista
+        list->begin->prev = list->end; //node anterior do começo da lista, é o fina da lista 
+    }
+
+    list->size++;
+}
+
+
+
 void print_list(const Circ_list *list ){
 
     if(list_is_empty(list)){
@@ -202,4 +225,9 @@ void print_list_v2_inverted(const Circ_list *list){
         printf("\nsize > %lu\n", list->size);
     }
 
+}
+
+void circ_list_remove(Circ_list *list, int val){
+
+    
 }

@@ -21,6 +21,7 @@ void print_list_v2(const Circ_list *list);
 void print_list_inverted(const Circ_list *list);
 void print_list_v2_inverted(const Circ_list *list);
 
+void circ_list_remove(Circ_list *list, int val);
 
 
 
